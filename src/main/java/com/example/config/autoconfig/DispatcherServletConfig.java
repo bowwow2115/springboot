@@ -1,11 +1,12 @@
-package com.example.config;
+package com.example.config.autoconfig;
 
+import com.example.config.MyAutoConfiguration;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.web.servlet.DispatcherServlet;
 
-@Configuration
-public class DispatcherServerConfig {
+@MyAutoConfiguration
+public class DispatcherServletConfig {
     @Bean
     public DispatcherServlet dispatcherServlet() {
         return new DispatcherServlet();
