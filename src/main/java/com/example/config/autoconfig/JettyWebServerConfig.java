@@ -6,8 +6,8 @@ import org.springframework.boot.web.servlet.server.ServletWebServerFactory;
 import org.springframework.context.annotation.Bean;
 
 @MyAutoConfiguration
-public class TomcatWebServerConfig {
-    @Bean("tomcatWebServerFactory")
+public class JettyWebServerConfig {
+    @Bean("jettyWebServerFactory")
     public ServletWebServerFactory servletWebServerFactory() {
         return new TomcatServletWebServerFactory();
     }
