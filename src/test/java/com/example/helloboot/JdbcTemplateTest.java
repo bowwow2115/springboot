@@ -5,10 +5,12 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
+import org.springframework.test.annotation.Rollback;
 
 import static org.assertj.core.api.Assertions.*;
 
 @HelloBootTest
+@Rollback(value = false)
 public class JdbcTemplateTest {
 
     @Autowired
@@ -26,6 +28,7 @@ public class JdbcTemplateTest {
 
         Long count = jdbcTemplate.queryForObject("select count(*) from member", Long.class);
         assertThat(count).isEqualTo(2);
-
     }
+
+
 }
