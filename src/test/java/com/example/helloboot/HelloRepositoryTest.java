@@ -10,29 +10,25 @@ import static org.assertj.core.api.Assertions.*;
 @HelloBootTest
 public class HelloRepositoryTest {
     @Autowired
-    HellopRepository hellopRepository;
+    HelloRepository helloRepository;
     @Autowired
     JdbcTemplate jdbcTemplate;
 
-    @BeforeEach
-    void init() {
-        jdbcTemplate.execute("create table if not exists hello(name varchar(50) primary key, count int)");
-    }
 
     @Test
     void findHelloFailed() {
-        assertThat(hellopRepository.findHello("Park")).isNull();
+        assertThat(helloRepository.findHello("Park")).isNull();
     }
 
     @Test
     void increaseCount() {
-        assertThat(hellopRepository.countOf("Park")).isEqualTo(0);
+        assertThat(helloRepository.countOf("Park")).isEqualTo(0);
 
-        hellopRepository.increaseCount("Park");
-        assertThat(hellopRepository.countOf("Park")).isEqualTo(1);
+        helloRepository.increaseCount("Park");
+        assertThat(helloRepository.countOf("Park")).isEqualTo(1);
 
-        hellopRepository.increaseCount("Park");
-        assertThat(hellopRepository.countOf("Park")).isEqualTo(2);
+        helloRepository.increaseCount("Park");
+        assertThat(helloRepository.countOf("Park")).isEqualTo(2);
     }
 
 

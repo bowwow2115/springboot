@@ -1,6 +1,6 @@
 package com.example.helloboot;
 
-public interface HellopRepository {
+public interface HelloRepository {
     Hello findHello(String name);
 
     void increaseCount(String name);

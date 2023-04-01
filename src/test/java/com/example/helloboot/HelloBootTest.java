@@ -14,7 +14,7 @@ import java.lang.annotation.Target;
 @Retention(RetentionPolicy.RUNTIME)
 @Target(ElementType.TYPE)
 @ExtendWith(SpringExtension.class)
-@ContextConfiguration(classes = HellobootApplication.class)
+@ContextConfiguration(classes = HellobootApplication.class) //해당 문구를 통해 어플리케이션의 context를 받을 수 있다.
 @TestPropertySource("classpath:/application.properties")
 @Transactional
 public @interface HelloBootTest {
